@@ -1,10 +1,8 @@
-# Import the required library
 from geopy.geocoders import Nominatim
-
-# Initialize Nominatim API
 geolocator = Nominatim(user_agent="MyApp")
+# address is a String e.g. 'Berlin, Germany'
+# addressdetails=True does the magic and gives you also the details
+location = geolocator.geocode("Bangalore", addressdetails=True)
 
-location = geolocator.geocode("5 Pulgaon")
-
-print("The latitude of the location is: ", location.latitude)
-print("The longitude of the location is: ", location.longitude)
+print(location.latitude)
+print(location.longitude)

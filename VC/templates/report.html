@@ -47,16 +47,25 @@ REPORT
             <h2>Animal details</h2>
             <div class="row g-3">
                 <div class="form-group col-md-6">
-                    <input class="form-control mx-auto w-auto" autocomplete="off" name="animal_type" placeholder="Animal type" type="text">
+                    <select class="form-select col-md-6" id="inputGroupSelect01" name="animal_type" placeholder="Animal type">
+                        <option selected>Choose...</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Parrot">Parrot</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
                     <input class="form-control mx-auto w-auto" autocomplete="off" name="animal_issue" placeholder="Issue" type="text">
                 </div>
             </div>
             <div style="padding-top: 20px;">
-                <input class="form-control mx-auto w-auto" id="btn5" type="submit" value="Submit">
+                <input class="form-control mx-auto w-auto btn4" type="submit" value="Submit">
             </div>
+        </div>
     </form>
+    <div style="text-align: center; padding-top: 30px;">
+        <a href="/" id="btn5">Home</a>
+    </div>
 </div>
 
 {% endblock %}
