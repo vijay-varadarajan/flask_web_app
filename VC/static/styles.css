@@ -1,5 +1,5 @@
 body {
-    background: #e0e5ec;
+    background: #606060;
     background-image: url("Untitled-2\ final\ 2.jpg");
     background-repeat: no-repeat;
     cursor: url('catscratch2.gif'), auto;
@@ -16,11 +16,13 @@ body {
   #login-box {
     position: relative;
     margin: 5% auto;
-    width: 500px;
-    height: 450px;
+    width: 700px;
+    height: 500px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(8,7,16,0.6);
+    box-shadow: 0 0 20px rgba(85, 85, 85, 0.54);
     border-radius: 2px;
+    padding-top: 40px;
+    background-color: #60606069;
   }
   p {
     font-family: 'Lato', sans-serif;
@@ -74,20 +76,20 @@ body {
   
   .reg {
     color: white;
-    background-color: rgba(10, 128, 125, 1);
+    background-color: rgba(7, 112, 173,1);
   }
   
   .log {
     color: rgb(10, 128, 125);
     background-color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(10, 128, 125, 1);
+    border: 1px solid rgba(7, 112, 173,1);
 }
 
 button:hover {
   color: white;
   
-  box-shadow: 0 0 20px rgba(10, 128, 125, 0.6);
-  background-color: rgba(10, 128, 125, 1);
+  box-shadow: 0 0 20px rgba(7, 112, 173,1);
+  background-color: rgba(7, 112, 173,1);
 }
   
 td {
@@ -97,7 +99,7 @@ td {
   /* 3 */
   .btn-3 {
     background: rgb(0,172,238);
-  background: linear-gradient(0deg, rgba(23, 161, 158,1) 0%, rgba(7, 126, 123,1) 100%);
+  background: linear-gradient(0deg, rgba(7, 112, 173,1) 0%, rgba(7, 112, 173,1) 100%);
     width: 130px;
     height: 40px;
     line-height: 30px;
@@ -117,7 +119,7 @@ td {
     content: "";
     right: 0;
     top: 0;
-     background: rgba(23, 161, 158,1);
+     background: rgba(7, 112, 173,1);
     transition: all 0.2s ease;
   }
   .btn-3:before {
@@ -139,7 +141,7 @@ td {
     width: 100%;
   }
   .btn-3 span:hover{
-     color: rgba(23, 161, 158,1);
+     color: rgba(7, 112, 173,1);
   }
   .btn-3 span:before,
   .btn-3 span:after {
@@ -147,7 +149,7 @@ td {
     content: "";
     left: 0;
     bottom: 0;
-     background: rgba(23, 161, 158,1);
+     background: rgba(7, 112, 173,1);
     transition: all 0.2s ease;
   }
   .btn-3 span:before {
@@ -257,10 +259,10 @@ td {
     }
 
     #btn3:link, #btn3:visited{
-        color: rgba(23, 161, 158);
+        color: rgba(7, 112, 173,1);
     }
     #btn3:hover{
-        color: rgba(23, 161, 158);
+        color: rgba(7, 112, 173,1);
     }
     #btn3:active{
         color: #fff;

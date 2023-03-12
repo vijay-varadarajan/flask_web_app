@@ -1,4 +1,57 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
 
-{% block title %}
-SELECT PET
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+        
+        <link href="/static/health.css" rel="stylesheet">
+
+        <title>VC: SELECT PET</title>
+    </head>
+    
+    <body>
+        <nav class="bg-light border navbar navbar-expand-md navbar-light mb-3" style="opacity: .5">
+            <div class="container-fluid">
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    {% if session["user_id"] %}
+                        <ul class="navbar-nav me-auto mt-2">
+                            <li class="nav-item"><img src="../static/VET_fianl_03.png" alt="VETCONNECT" height="75px" width="105px" href="/"></li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/change_pwd">Change Password</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+        <form action="/health" method="post">
+            <div class="dropdown">
+                <select class="form-select col-md-6" id="inputGroupSelect01" name="name_of_pet" placeholder="Pet Name">
+                    <option selected>Pet Name</option>
+                    {% for element in petnames %}
+                        {% set petname = element["Petname"] %}
+                        <option value=petname>{{ element["Petname"] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group" style="margin-left: -928px;">
+                <input id="submit_pet"  class="form-control mx-auto w-auto" id="btn3" type="submit" value="Submit">
+            </div>
+        </form>
+    </body>
+</html>

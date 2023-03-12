@@ -254,21 +254,26 @@ def report():
     print(finalhospinfo)
     return render_template("hosplist.html", hosp=finalhospinfo)
 
-
-@app.route("/health/", methods=["GET", "POST"])
+final_details = []
+@app.route("/selectpet", methods=["GET", "POST"])
 @login_required
-def healthcard():
+def selectpet():
     if request.method=="POST":
         name_of_pet = request.form.get("name_of_pet")
         username = db.execute("SELECT Username FROM users WHERE ID = ?", session["user_id"])
-        pets = db.execute("SELECT * FROM ? WHERE Petname=?", username[0]['Username'], name_of_pet)
+        details = db.execute("SELECT * FROM ? WHERE Petname=?", username, name_of_pet)
+        final_details = details
+        print(final_details)
         return redirect('/health')
     else:
         username = db.execute("SELECT Username FROM users WHERE ID = ?", session["user_id"])
         petnames = db.execute("SELECT Petname FROM ?", username[0]['Username'])
-        return render_template("health.html", petnames=petnames)
-        
+        return render_template("selectpet.html", petnames = petnames)     
 
+@app.route("/health")
+@login_required
+def health():
+    return render_template('health.html', pets=final_details)
 
 def apology(message, code=400):
     """Render message as an apology to user."""

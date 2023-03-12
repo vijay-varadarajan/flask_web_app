@@ -1,0 +1,34 @@
+body{
+    background-image: url('Health\ Card\ BackGround.jpg');
+}
+    .content-box { width: 1000px; height: 500px; 
+        margin-top: 40px; 
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-bottom: 10px;   
+      
+        align-self: center;
+        padding-top: 50px;
+        background-image: url('Health\ Card\ ForeGround.jpg');
+        
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 6px;
+        }
+
+    .dropdown{
+        background-color: #f3e2b7;
+        margin-left: 130px;
+        width: 200px;
+    }
+    
+    
+
+    #submit_pet:hover, #submit_pet:active, #submit_pet:focus{
+        background-color: #f3e2b7;
+    }
